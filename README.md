@@ -26,3 +26,12 @@
    2. I created two jobs in jenkins the first one would download the code from git hub an the second one would run the terraform file .The jobs were created using the build pipeline.
    
    ![Screenshot (419)](https://user-images.githubusercontent.com/51692515/84569273-d9e21100-ada2-11ea-8132-0c7589e339fb.png)
+
+# 4. CREATING THE TERRAFORM CODE:
+   1. The first part knowing your provider and connecting to it. here i used aws as a service provider and provided my access key and the id to log in .
+            
+           provider "aws" {
+                           region     = "us-east-2"
+                           access_key = "AKIARLICQOVGX3J65GM7"
+                           secret_key = "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"
+                          }
