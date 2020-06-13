@@ -156,3 +156,48 @@
                                     etag = "${filemd5("C:/Users/hp/Downloads/photo2.jpg")}"
                                                 }
                
+ 7. Next , is to create the cloudfront distribution , so that it will go on our behalf to access the images from the bucket and only allow the authorised people to access using the bucket policy that we will define soon. The distribution was attached to the same bucket we created above . A cloudfront origin access identity was also created in order to use with the cloudfront distribution . All the types of the protocols were allowed and no geo-restriction was applied.
+ 
+                    resource "aws_cloudfront_distribution" "cloudfront_distribution_created" {
+                        depends_on = [aws_cloudfront_origin_access_identity.origin_access_identity_created]
+                        origin {
+                            domain_name = "${aws_s3_bucket.bucket_created.bucket_regional_domain_name}"
+                            origin_id   = "S3-terraform-bucket06"
+
+                        s3_origin_config {
+                            origin_access_identity = aws_cloudfront_origin_access_identity.origin_access_identity_created.cloudfront_access_identity_path
+                                            }
+                                        }
+ 
+                            enabled   = true
+
+                             default_cache_behavior {
+                                    allowed_methods  = [ "GET", "HEAD"]
+                                    cached_methods   = ["GET", "HEAD"]
+                                    target_origin_id = "S3-terraform-bucket06"
+
+                          forwarded_values {
+                                    query_string = false
+
+                                    cookies {
+                                        forward = "none"
+                                             }
+                                        }
+
+                           viewer_protocol_policy = "allow-all"
+                            min_ttl                = 0
+                            default_ttl            = 3600
+                            max_ttl                = 86400
+                                }
+
+                            restrictions {
+                                geo_restriction {
+                                        restriction_type = "none"
+                                                }
+                                            }
+
+                             viewer_certificate {
+                                    cloudfront_default_certificate = true
+                                                }
+
+                                             }
