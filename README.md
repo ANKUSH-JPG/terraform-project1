@@ -128,3 +128,31 @@
                                                               }
                                                             }
               
+ 6. Next , is to create a s3 bucket in order to store the images , so as to use them in our code . Along with the bucket creation we resticted the bucket access so , that only the authorised user can have a access to the content . The bucker policy would be created further when we will create cloudfront distribution .
+ 
+                       resource "aws_s3_bucket" "bucket_created" {
+                                        bucket = "terraform-bucket06"
+                                            }
+                      resource "aws_s3_bucket_public_access_block" "bucket_public_access_created" {
+                      depends_on = [aws_s3_bucket.bucket_created]
+                      bucket = "${aws_s3_bucket.bucket_created.id}"
+                      block_public_acls   = true
+                      block_public_policy = true
+                      restrict_public_buckets = true
+                      ignore_public_acls = true
+                                        }
+                       resource "aws_s3_bucket_object" "image1_uploaded" {
+                                    depends_on = [aws_s3_bucket.bucket_created]
+                                    bucket = "${aws_s3_bucket.bucket_created.id}"
+                                    key    = "corona_image.jpg"
+                                    source = "C:/Users/hp/Downloads/photo1.jpg"
+                                    etag = "${filemd5("C:/Users/hp/Downloads/photo1.jpg")}"
+                                            }
+                        resource "aws_s3_bucket_object" "image2_uploaded" {
+                                    depends_on = [aws_s3_bucket.bucket_created]
+                                    bucket = "${aws_s3_bucket.bucket_created.id}"
+                                    key    = "corona_image2.jpg"
+                                    source = "C:/Users/hp/Downloads/photo2.jpg"
+                                    etag = "${filemd5("C:/Users/hp/Downloads/photo2.jpg")}"
+                                                }
+               
