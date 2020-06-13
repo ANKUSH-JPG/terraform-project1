@@ -92,3 +92,39 @@
                                                     ]
                                               }
                                            }
+                                           
+  5. Next , was to create an ebs volume and to mount it to the instance for the data persistency . so , we created a volume and attached it to the instance and enabled the force detached (to unmout when the "terraform destroy" is executed) . We also used a null resource to connect to the instance again ( to create the partitioning and to download the code using "git clone" and deploy the code in /var/www/html folder ).
+   
+             
+              resource "aws_volume_attachment" "volume_attachment_created" {
+                                    device_name = "/dev/xvdh"
+                                    volume_id   = aws_ebs_volume.ebs_volume_created.id
+                                    instance_id = aws_instance.my_web.id
+                                    depends_on = [aws_ebs_volume.ebs_volume_created]
+                                    force_detach =true
+                                                                            }
+
+                                    resource "null_resource" "second_null_resource" {
+
+                                             depends_on = [aws_volume_attachment.volume_attachment_created]
+                                             connection {
+                                                    type     = "ssh"
+                                                     user     = "ec2-user"
+                                                    private_key = file("C:/Users/hp/Downloads/amazonAMI.pem")
+                                                     host        = aws_instance.my_web.public_ip
+    
+                                                        } 
+
+
+                                    provisioner "remote-exec" {
+                                                     inline = [
+                                                            "sudo fdisk -l",
+                                                            "sudo mkfs.ext4 /dev/xvdh",
+                                                            "sudo mount /dev/xvdh /var/www/html",
+                                                            "sudo lsblk",
+                                                            "sudo git clone https://github.com/ANKUSH-JPG/terraform-project1.git",
+                                                            "sudo mv terraform-project1 /var/www/html"
+                                                                ]
+                                                              }
+                                                            }
+              
