@@ -64,3 +64,31 @@
                           }
               
           
+   4. Next , was to create the aws instance which would deploy the web page for us. we used ami version "ami-026dea5602e368e96" for creating the instance , the instance type was "t2.micro" , the key pair and the security group created above was used and attached to the aws instance. Next inorder to establish the connection with the ec2 instance we used connection keyword , and used SSH to connect to the instance . On remote execution we downloaded the required softwares to run deploy the page.
+                       
+                  resource "aws_instance" "my_web" {
+                             ami           = "${var.ami_id}"
+                             instance_type = "t2.micro"
+                             key_name      = "amazonAMI"
+                             security_groups = [aws_security_group.security_group_created.name]
+                             tags = {
+                                   Name = "FirstUsingTerraform"
+                                    }
+
+                            connection {
+                                   type     = "ssh"
+                                   user     = "ec2-user"
+                                   private_key = file("C:/Users/hp/Downloads/amazonAMI.pem")
+                                   host        = aws_instance.my_web.public_ip
+                                        } 
+
+
+                            provisioner "remote-exec" {
+                                        inline = [
+                                        "sudo yum update -y",
+                                        "sudo yum install httpd -y",
+                                        "sudo systemctl start httpd",
+                                        "sudo yum install git -y"
+                                                    ]
+                                              }
+                                           }
