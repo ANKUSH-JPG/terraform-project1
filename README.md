@@ -232,3 +232,8 @@
                             bucket = "${aws_s3_bucket.bucket_created.id}"
                             policy = "${data.aws_iam_policy_document.s3_policy.json}"
                                     } 
+# 6. FINAL OUTPUT:
+   THE OUTPUT WHEN THE PUBLIC IP OF THE INSTANCE WAS USED ALON WITH PORT 80.
+    
+    ![Screenshot (440)](https://user-images.githubusercontent.com/51692515/84570869-a789e100-adad-11ea-9276-36b08eaa85bc.png)
+# 5. TERRAFORM CODE IN ACTION :
