@@ -18,7 +18,11 @@
    
     NOTE: In the code above i didnt mention my secret access key and password for the security purpose, you can use your own credentials to create the infrastructure in aws.
     
-# 3. CODE CREATION:
+# 3. JENKINS PART OF CREATING THE CODE:
    1. Firstly, i created the html page to be deployed in the webserver(running in aws instance)  and the photos(to be stored in s3).
      
    ![Screenshot (441)](https://user-images.githubusercontent.com/51692515/84569124-b79bc380-ada1-11ea-94e3-6a595c74c55e.png)
+   
+   2. I created two jobs in jenkins the first one would download the code from git hub an the second one would run the terraform file .The jobs were created using the build pipeline.
+   
+   ![Screenshot (419)](https://user-images.githubusercontent.com/51692515/84569273-d9e21100-ada2-11ea-8132-0c7589e339fb.png)
