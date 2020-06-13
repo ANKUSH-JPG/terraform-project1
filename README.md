@@ -201,3 +201,34 @@
                                                 }
 
                                              }
+                                             
+ 8. Next , we created the bucket policy and attached it to the bucket that was created using s3.
+ 
+                data "aws_iam_policy_document" "s3_policy" {
+  
+                                     statement {
+                                             actions   = ["s3:GetObject"]
+                                             resources = ["${aws_s3_bucket.bucket_created.arn}/*"]
+
+                                             principals {
+                                                   type        = "AWS"
+                                                   identifiers = ["${aws_cloudfront_origin_access_identity.origin_access_identity_created.iam_arn}"]
+                                                        }
+                                                    }
+
+                                             statement {
+                                                    actions   = ["s3:ListBucket"]
+                                                    resources = ["${aws_s3_bucket.bucket_created.arn}"]
+
+                                            principals {
+                                                     type        = "AWS"
+                                                    identifiers = ["${aws_cloudfront_origin_access_identity.origin_access_identity_created.iam_arn}"]
+                                                        }
+                                                    }
+                                                   }
+
+                  resource "aws_s3_bucket_policy" "bucket_policy_created" {
+                            depends_on = [aws_cloudfront_origin_access_identity.origin_access_identity_created]
+                            bucket = "${aws_s3_bucket.bucket_created.id}"
+                            policy = "${data.aws_iam_policy_document.s3_policy.json}"
+                                    } 
