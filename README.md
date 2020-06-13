@@ -14,5 +14,5 @@
 
 
 # 2. CODE:
- The code i created is present above in this repo . you can have a look at it.
- NOTE: In the code above i didnt mention my secret access key and password for the security purpose, you can use your own credentials to          create the infrastructure in aws.
+   The code i created is present above in this repo . you can have a look at it.
+   NOTE: In the code above i didnt mention my secret access key and password for the security purpose, you can use your own credentials to          create the infrastructure in aws.
