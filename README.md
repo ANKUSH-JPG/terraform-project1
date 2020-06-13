@@ -237,3 +237,18 @@
     
    ![Screenshot (440)](https://user-images.githubusercontent.com/51692515/84570869-a789e100-adad-11ea-9276-36b08eaa85bc.png)
 # 5. TERRAFORM CODE IN ACTION :
+   ![Screenshot (420)](https://user-images.githubusercontent.com/51692515/84570785-43ffb380-adad-11ea-9d08-09f0b947360d.png)
+   
+   ![Screenshot (421)](https://user-images.githubusercontent.com/51692515/84570791-46620d80-adad-11ea-9d50-f37e49178aa6.png)
+   
+   ![Screenshot (422)](https://user-images.githubusercontent.com/51692515/84570805-54179300-adad-11ea-9a89-85963daf7b1c.png)
+   
+   ![Screenshot (423)](https://user-images.githubusercontent.com/51692515/84570801-50840c00-adad-11ea-9e44-85f378371a9e.png)
+   
+   ![Screenshot (424)](https://user-images.githubusercontent.com/51692515/84570803-524dcf80-adad-11ea-9f6a-c9a6a33cdf1c.png)
+   
+   ![Screenshot (425)](https://user-images.githubusercontent.com/51692515/84570809-5974dd80-adad-11ea-8709-83dfaa5ca1fe.png)
+
+   ![Screenshot (426)](https://user-images.githubusercontent.com/51692515/84570806-57128380-adad-11ea-9155-dc950f4fcbaa.png)
+   
+   ![Screenshot (427)](https://user-images.githubusercontent.com/51692515/84570808-5843b080-adad-11ea-876d-1c121c3a5400.png)
