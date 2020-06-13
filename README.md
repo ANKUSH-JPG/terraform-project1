@@ -2,7 +2,7 @@
 
 # USING TERRAFORM TO CREATE INFRASTRUCTURE FOR LAUNCHING THE WEB SERVER IN EC2 INSTANCE.
 
-TASK IN SHORT:
+  TASK IN SHORT:
       1.Create the key and security group which allow the port 80.
       2.Launch EC2 instance.
       3.In this Ec2 instance use the key and security group which we have created in step 1.
