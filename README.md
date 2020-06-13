@@ -236,7 +236,7 @@
    THE OUTPUT WHEN THE PUBLIC IP OF THE INSTANCE WAS USED ALON WITH PORT 80.
     
    ![Screenshot (440)](https://user-images.githubusercontent.com/51692515/84570869-a789e100-adad-11ea-9276-36b08eaa85bc.png)
-# 5. TERRAFORM CODE IN ACTION :
+# 7. TERRAFORM CODE IN ACTION :
    ![Screenshot (420)](https://user-images.githubusercontent.com/51692515/84570785-43ffb380-adad-11ea-9d08-09f0b947360d.png)
    
    ![Screenshot (421)](https://user-images.githubusercontent.com/51692515/84570791-46620d80-adad-11ea-9d50-f37e49178aa6.png)
@@ -252,3 +252,13 @@
    ![Screenshot (426)](https://user-images.githubusercontent.com/51692515/84570806-57128380-adad-11ea-9155-dc950f4fcbaa.png)
    
    ![Screenshot (427)](https://user-images.githubusercontent.com/51692515/84570808-5843b080-adad-11ea-876d-1c121c3a5400.png)
+#  8. LETS HAVE A LOOK AT AWS CONSOLE:
+  1.  EC2 INSTANCE CREATED:
+     ![Screenshot (434)](https://user-images.githubusercontent.com/51692515/84571091-dce2fe80-adae-11ea-88c7-61a3665ba9f5.png)
+     
+  2.   S3 BUCKET AND THE POLICY:
+    ![Screenshot (431)](https://user-images.githubusercontent.com/51692515/84571097-e2404900-adae-11ea-9d9b-8d69211a055e.png)
+
+   ![Screenshot (432)](https://user-images.githubusercontent.com/51692515/84571104-ec624780-adae-11ea-8022-f4c4fe7c6e39.png)
+
+   ![Screenshot (433)](https://user-images.githubusercontent.com/51692515/84571102-ea988400-adae-11ea-9a51-d9d640291b04.png)
